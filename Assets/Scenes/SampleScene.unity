@@ -577,7 +577,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1321371563}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: StopCurrentClip
         m_Mode: 1
@@ -864,7 +864,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1321371563}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: ToggleMusic
         m_Mode: 0
@@ -1536,7 +1536,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1321371563}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlayClipTwo
         m_Mode: 1
@@ -1671,7 +1671,7 @@ GameObject:
   - component: {fileID: 833103572}
   - component: {fileID: 833103573}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: BackgroundVolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1751,7 +1751,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1321371563}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: ChangeBackgroundVolume
         m_Mode: 0
@@ -2031,7 +2031,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1321371563}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlayClipOne
         m_Mode: 1
@@ -2362,7 +2362,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1321371562}
-  - component: {fileID: 1321371563}
+  - component: {fileID: 1321371566}
+  - component: {fileID: 1321371565}
+  - component: {fileID: 1321371567}
+  - component: {fileID: 1321371571}
+  - component: {fileID: 1321371570}
+  - component: {fileID: 1321371569}
+  - component: {fileID: 1321371568}
+  - component: {fileID: 1321371572}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -2387,7 +2394,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1321371563
+--- !u!114 &1321371565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321371561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7a2fca31d940d47801a02b2d198cc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _exposedParameter: BackgroundVolume
+  _slider: {fileID: 833103573}
+  _mixerGroup: {fileID: 24300002, guid: 86200dbdf82a025439dc03f9eaff4761, type: 2}
+--- !u!114 &1321371566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321371561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7a2fca31d940d47801a02b2d198cc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _exposedParameter: MasterVolume
+  _slider: {fileID: 1444259640}
+  _mixerGroup: {fileID: 24300002, guid: 86200dbdf82a025439dc03f9eaff4761, type: 2}
+--- !u!114 &1321371567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321371561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92a63e0a2826a574f84d519f16368ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _toggle: {fileID: 456288109}
+  _listener: {fileID: 519420029}
+--- !u!114 &1321371568
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2399,11 +2450,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a11493088baf8bb4186c37b24abaf367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainMixerGroup: {fileID: 24300002, guid: 86200dbdf82a025439dc03f9eaff4761, type: 2}
+  _button: {fileID: 2113393141}
   _source: {fileID: 1496343487}
-  ClipOne: {fileID: 8300000, guid: 9fb07315e9d2dd440a15a375b8bf1aa9, type: 3}
-  ClipTwo: {fileID: 8300000, guid: 069c8ec8fa76cd04eb1e2f334d295d0b, type: 3}
-  ClipThree: {fileID: 8300000, guid: d9426a446b8f7fd46bd9e84cc2cd59da, type: 3}
+  _clip: {fileID: 8300000, guid: d9426a446b8f7fd46bd9e84cc2cd59da, type: 3}
+--- !u!114 &1321371569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321371561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a11493088baf8bb4186c37b24abaf367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 714391905}
+  _source: {fileID: 1496343487}
+  _clip: {fileID: 8300000, guid: 069c8ec8fa76cd04eb1e2f334d295d0b, type: 3}
+--- !u!114 &1321371570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321371561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a11493088baf8bb4186c37b24abaf367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 1061140252}
+  _source: {fileID: 1496343487}
+  _clip: {fileID: 8300000, guid: 9fb07315e9d2dd440a15a375b8bf1aa9, type: 3}
+--- !u!114 &1321371571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321371561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7a2fca31d940d47801a02b2d198cc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _exposedParameter: ClipsVolume
+  _slider: {fileID: 1456660131}
+  _mixerGroup: {fileID: 24300002, guid: 86200dbdf82a025439dc03f9eaff4761, type: 2}
+--- !u!114 &1321371572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321371561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5412ab6dc2dfe6f45994aa4f0e9b39a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 312735480}
+  _source: {fileID: 1496343487}
 --- !u!1 &1350447947
 GameObject:
   m_ObjectHideFlags: 0
@@ -2605,7 +2713,7 @@ GameObject:
   - component: {fileID: 1444259639}
   - component: {fileID: 1444259640}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: MainVolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2685,7 +2793,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1321371563}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: ChangeMainVolume
         m_Mode: 0
@@ -2708,7 +2816,7 @@ GameObject:
   - component: {fileID: 1456660130}
   - component: {fileID: 1456660131}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: ClipVolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2788,7 +2896,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1321371563}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: ChangeClipVolume
         m_Mode: 0
@@ -3976,7 +4084,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1321371563}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlayClipThree
         m_Mode: 1
